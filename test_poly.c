@@ -47,8 +47,6 @@ int main (int argc, char **argv)
 
 
 
-
-
   /*
     ajouter du code pour tester les fonctions
     sur les polynomes
