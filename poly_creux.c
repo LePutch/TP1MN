@@ -28,9 +28,7 @@ void detruire_polynome (p_polyf_t p)
 
 void init_polynome (p_polyf_t p, float x)
 {
-  register unsigned int i ;
-
-  for (i = 0 ; i <= p->degre; ++i)
+  for (int i = 0 ; i <= p->nb_termes; ++i)
     p->coeff [i] = x ;
 
   return ;
