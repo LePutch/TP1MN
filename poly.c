@@ -132,9 +132,11 @@ p_polyf_t addition_polynome (p_polyf_t p1, p_polyf_t p2)
 
 p_polyf_t multiplication_polynome_scalaire (p_polyf_t p, float alpha)
 {
-  /* alpha * p1 */
-
-  return NULL ;
+  p_polyf_t res=creer_polynome(p->degre);
+  for(int i=0;i<p->degre;i++){
+    res->coeff[i]=alpha*p->coeff[i];
+  }
+  return res;
 }
 
 float eval_polynome (p_polyf_t p, float x)
