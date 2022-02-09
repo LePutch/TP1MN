@@ -153,6 +153,9 @@ p_polyf_t multiplication_polynomes (p_polyf_t p1, p_polyf_t p2)
 {
   p_polyf_t res ;
   res = creer_polynome(p1->degre + p2->degre);
+  
+  for (int i = 0; i < res->degre; ++i)
+    res->coeff[i] = 0;
 
   for (int i = 0; i <= p1->degre; i++)
   {
