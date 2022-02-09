@@ -46,6 +46,9 @@ int main (int argc, char **argv)
   ecrire_polynome_float(compo1);
 
 
+
+
+
   /*
     ajouter du code pour tester les fonctions
     sur les polynomes
