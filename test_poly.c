@@ -23,6 +23,8 @@ int main (int argc, char **argv)
   int res = egalite_polynome(p1, p2);
   printf("Egalité p1 / p2 : %s\n", res == 0 ? "non" : "oui");
   
+  p_polyf_t multscal=multiplication_polynome_scalaire(p1,3);
+  ecrire_polynome_float(multscal);
   /*
     ajouter du code pour tester les fonctions
     sur les polynomes
