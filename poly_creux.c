@@ -28,10 +28,11 @@ void detruire_polynome (p_polyf_t p)
 
 void init_polynome (p_polyf_t p, float x)
 {
-  for (int i = 0 ; i <= p->nb_termes; ++i)
-    p->coeff [i] = x ;
-
+  for (int i = 0 ; i <= p->nbCoeffs; ++i){
+    p->degCoeff[i] = i;
+    p->coeff[i]=x;
   return ;
+  }
 }
 
 
