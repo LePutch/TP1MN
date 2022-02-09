@@ -1,0 +1,6 @@
+*.o
+p1
+p2
+perf_poly
+test_poly
+.vscode
