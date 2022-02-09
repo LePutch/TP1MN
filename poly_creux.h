@@ -7,7 +7,6 @@
 #define min(a,b) ((a)<(b)?(a):(b))
 
 typedef struct {
-  int degre;
   int nbCoeffs;
   float *coeff;
   int *degCoeff;
