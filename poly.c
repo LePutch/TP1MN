@@ -6,16 +6,16 @@
 
 #include <x86intrin.h>
 
-p_polyf_t creer_polynome (int degre)
+p_polyf_t creer_polynome (int nbCoeffs)
 {
-  p_polyf_t p ;
+  p_polyf_t p;
   
-  p = (p_polyf_t) malloc (sizeof (polyf_t)) ;
-  p->degre = degre ;
+  p = (p_polyf_t) malloc(sizeof (polyf_t));
+  p->nbCoeffs = nbCoeffs;
+  p->coeff = (float *) malloc(nbCoeffs * sizeof (float));
+  p->degCoeff = (float *) malloc(nbCoeffs * sizeof (float));
 
-  p->coeff = (float *) malloc ((degre+1) * sizeof (float))  ;
-
-  return p ;
+  return p;
 }
 
 void detruire_polynome (p_polyf_t p)
@@ -178,10 +178,8 @@ p_polyf_t puissance_polynome (p_polyf_t p, int n)
 p_polyf_t composition_polynome (p_polyf_t p, p_polyf_t q)
 {
   p_polyf_t res = creer_polynome(q->degre*p->degre);
+  init_polynome(res,0.0);
   res->coeff[0] = p->coeff[0];
-  for(int i = 1; i <= res->degre; i++) {
-    res->coeff[i] = 0;
-  }
   ecrire_polynome_float(res);
   for(int i = 1; i<=p->degre; i++) {
     p_polyf_t resPuiss = puissance_polynome(q, i);
