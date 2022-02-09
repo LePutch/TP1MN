@@ -1,4 +1,5 @@
 *.o
 perf_poly
 test_poly
+test_poly_creux
 .vscode

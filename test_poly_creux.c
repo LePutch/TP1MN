@@ -20,4 +20,7 @@ int main (int argc, char **argv)
   ecrire_polynome_float (p1) ;
   ecrire_polynome_float (p2) ;
 
+  printf("p5(2) = %f\n", eval_polynome(p1, 2));
+  printf("p6(3) = %f\n", eval_polynome(p2, 3));
+
 }
