@@ -12,7 +12,7 @@ typedef struct {
   int *degCoeff;
 } polyf_t, *p_polyf_t;
 
-p_polyf_t creer_polynome (int degre) ;
+p_polyf_t creer_polynome (int nbCoeffs) ;
 
 void init_polynome (p_polyf_t p, float x) ;
 
