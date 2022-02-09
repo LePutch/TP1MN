@@ -152,23 +152,15 @@ float eval_polynome (p_polyf_t p, float x)
 p_polyf_t multiplication_polynomes (p_polyf_t p1, p_polyf_t p2)
 {
   p_polyf_t res ;
-  res = (p_polyf_t) malloc (sizeof (polyf_t)) ;
-  res->coeff = (float *) malloc ((p1->degre + p2->degre) * sizeof (float));
-  res->degre = p1->degre + p2->degre;
+  res = creer_polynome(p1->degre + p2->degre);
 
-  for (int i = 0; i < res->degre; ++i)
+  for (int i = 0; i <= p1->degre; i++)
   {
-    res->coeff[i] = 0;
-  }
-  for (int i = 0; i <= p1->degre; ++i)
-  {
-    for (int j = 0; j <= p2->degre; ++j)
-    {
+    for (int j = 0; j <= p2->degre; j++)
       res->coeff[i+j] += p1->coeff[i] * p2->coeff[j];
-    }
   }
 
-  return res ;
+  return res;
 }
 
 p_polyf_t puissance_polynome (p_polyf_t p, int n)
