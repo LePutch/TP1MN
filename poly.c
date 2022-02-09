@@ -167,12 +167,15 @@ p_polyf_t puissance_polynome (p_polyf_t p, int n)
 
 p_polyf_t composition_polynome (p_polyf_t p, p_polyf_t q)
 {
-  /*
-    p O q
-  */
-
-  return NULL ;
+  p_polyf_t *puissance =  malloc (sizeof (polyf_t)*p->degre) ;
+  p_polyf_t *multscal =  malloc (sizeof (polyf_t)*p->degre) ;
+  for (int i=0;i<=p->degre;i++){
+    puissance[i]=puissance_polynome(q,i);
+    multscal[i]=multiplication_polynome_scalaire(puissance[i],p->coeff[i]);
+  }
+  p_polyf_t res=creer_polynome(q->degre*p->degre);
+  for(int j=0;j<p->degre;j++){
+    res=addition_polynome(res,multscal[j]);
+  }
+  return res;
 }
-
-
-
