@@ -30,13 +30,21 @@ int main (int argc, char **argv)
   printf("p2(4) = %f\n", eval_polynome(p2, 4));
   
   /* Deux tests rapides sur la fonction multiplication_polynome_scalaire */
+  printf("Deux tests rapides sur la fonction multiplication_polynome_scalaire\n");
   p_polyf_t multscal=multiplication_polynome_scalaire(p1,3);
   p_polyf_t multscal1=multiplication_polynome_scalaire(p2,3);
   ecrire_polynome_float(multscal);
   ecrire_polynome_float(multscal1);
+  printf("Test puissance polynome\n\n");
+  p_polyf_t puissance1=puissance_polynome(p1,3);
+  ecrire_polynome_float(puissance1);
 
+
+
+  printf("Test composition polynome\n\n");
   p_polyf_t compo1=composition_polynome(p1,p2);
   ecrire_polynome_float(compo1);
+
 
   /*
     ajouter du code pour tester les fonctions
