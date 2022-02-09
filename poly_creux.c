@@ -13,7 +13,7 @@ p_polyf_t creer_polynome (int nbCoeffs)
   p = (p_polyf_t) malloc(sizeof (polyf_t));
   p->nbCoeffs = nbCoeffs;
   p->coeff = (float *) malloc(nbCoeffs * sizeof (float));
-  p->degCoeff = (float *) malloc(nbCoeffs * sizeof (float));
+  p->degCoeff = (int *) malloc(nbCoeffs * sizeof (int));
 
   return p;
 }
@@ -88,14 +88,15 @@ void ecrire_polynome_float (p_polyf_t p)
 {
   if(p->nbCoeffs == 0) return;
   printf("%f X^%d", p->coeff[0], p->degCoeff[0]);
-  for (int i = 1; i <= p->nbCoeffs; i++)
+  for (int i = 1; i < p->nbCoeffs; i++)
   {
-    printf ("+ %f X^%d ", p->coeff [i], i);
+    printf (" + %f X^%d ", p->coeff [i], p->degCoeff[i]);
   }
   printf ("\n");
   return ;
 }
 
+/*
 int egalite_polynome (p_polyf_t p1, p_polyf_t p2)
 {
   if(p1->nbCoeffs!=p2->nbCoeffs) return 0;
@@ -202,4 +203,4 @@ p_polyf_t composition_polynome (p_polyf_t p, p_polyf_t q)
     res = addition_polynome(res, resMult);
   }
   return res;
-}
+}*/
