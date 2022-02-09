@@ -143,15 +143,16 @@ p_polyf_t multiplication_polynome_scalaire (p_polyf_t p, float alpha)
   }
   return res;
 }
-
+*/
 float eval_polynome (p_polyf_t p, float x)
 {
   float res = 0;
-  for (int i = 0; i <= p->degre; i++) {
-    res += (p->coeff[i] * powf(x, i));
+  for (int i = 0; i < p->nbCoeffs; i++) {
+    res += (p->coeff[i] * powf(x, p->degCoeff[i]));
   }
   return res;
 }
+/*
 
 p_polyf_t multiplication_polynomes (p_polyf_t p1, p_polyf_t p2)
 {
