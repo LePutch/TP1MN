@@ -22,6 +22,8 @@ int main (int argc, char **argv)
 
   int res = egalite_polynome(p1, p2);
   printf("Egalité p1 / p2 : %s\n", res == 0 ? "non" : "oui");
+  printf("\n");
+  ecrire_polynome_float(multiplication_polynomes(p1, p2));
 
   /* Deux tests rapides sur la fonction eval_polynome */
   printf("p1(2) = %f\n", eval_polynome(p1, 2));
