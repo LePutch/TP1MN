@@ -78,17 +78,13 @@ p_polyf_t lire_polynome_float (char *nom_fichier)
 
 void ecrire_polynome_float (p_polyf_t p)
 {
-  int i ;
-
-  printf ("%f + %f x ", p->coeff [0], p->coeff [1]) ;
-  
-  for (i = 2 ; i <= p->degre; i++)
-    {  
-      printf ("+ %f X^%d ", p->coeff [i], i) ;
-    }
-  
-  printf ("\n") ;
-
+  if(p->nbCoeffs == 0) return;
+  printf("%f X^%d", p->coeff[0], p->degCoeff[0]);
+  for (int i = 1; i <= p->nbCoeffs; i++)
+  {
+    printf ("+ %f X^%d ", p->coeff [i], i);
+  }
+  printf ("\n");
   return ;
 }
 
