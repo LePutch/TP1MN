@@ -13,7 +13,8 @@ typedef struct {
 
 typedef struct {
   int degre;
-  
+  float *coeff;
+  int *degCoeff;
 }polyf_creux_t, *p_polyf_creux_t;
 
 p_polyf_t creer_polynome (int degre) ;
