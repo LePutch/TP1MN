@@ -31,8 +31,8 @@ void init_polynome (p_polyf_t p, float x)
   for (int i = 0 ; i <= p->nbCoeffs; ++i){
     p->degCoeff[i] = i;
     p->coeff[i]=x;
-  return ;
   }
+    return ;
 }
 
 
@@ -94,12 +94,10 @@ void ecrire_polynome_float (p_polyf_t p)
 
 int egalite_polynome (p_polyf_t p1, p_polyf_t p2)
 {
-  if(p1->degre != p2->degre)
-    return 0;
-  for (int i = 0; i < p1->degre; ++i)
-  {
-    if(p1->coeff[i] != p2->coeff[i])
-      return 0;  
+  if(p1->nbCoeffs!=p2->nbCoeffs) return 0;
+  for(int i=0;i<p1->nbCoeffs;i++){
+    if(p1->coeff[i]!=p2->coeff[i]) return 0;
+    if(p1->degCoeff[i]!=p2->degCoeff[i]) return 0;
   }
   return 1;
 }
