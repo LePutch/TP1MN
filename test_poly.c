@@ -20,6 +20,9 @@ int main (int argc, char **argv)
   ecrire_polynome_float (p1) ;
   ecrire_polynome_float (p2) ;
 
+  int res = egalite_polynome(p1, p2);
+  printf("Egalité p1 / p2 : %s\n", res == 0 ? "non" : "oui");
+  
   /*
     ajouter du code pour tester les fonctions
     sur les polynomes
