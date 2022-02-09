@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "poly.h"
 
@@ -141,11 +142,11 @@ p_polyf_t multiplication_polynome_scalaire (p_polyf_t p, float alpha)
 
 float eval_polynome (p_polyf_t p, float x)
 {
-  /* 
-     valeur du polynome pour la valeur de x
-  */
-
-  return 0.0 ;
+  float res = 0;
+  for(int i = 0; i <= p->degre; i++) {
+    res += (p->coeff[i] * powf(x, i));
+  }
+  return res;
 }
 
 p_polyf_t multiplication_polynomes (p_polyf_t p1, p_polyf_t p2)
