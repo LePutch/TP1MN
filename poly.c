@@ -6,16 +6,16 @@
 
 #include <x86intrin.h>
 
-p_polyf_t creer_polynome (int nbCoeffs)
+p_polyf_t creer_polynome (int degre)
 {
-  p_polyf_t p;
+  p_polyf_t p ;
   
-  p = (p_polyf_t) malloc(sizeof (polyf_t));
-  p->nbCoeffs = nbCoeffs;
-  p->coeff = (float *) malloc(nbCoeffs * sizeof (float));
-  p->degCoeff = (float *) malloc(nbCoeffs * sizeof (float));
+  p = (p_polyf_t) malloc (sizeof (polyf_t)) ;
+  p->degre = degre ;
 
-  return p;
+  p->coeff = (float *) malloc ((degre+1) * sizeof (float))  ;
+
+  return p ;
 }
 
 void detruire_polynome (p_polyf_t p)
