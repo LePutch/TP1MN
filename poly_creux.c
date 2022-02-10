@@ -111,28 +111,12 @@ int egalite_polynome (p_polyf_t p1, p_polyf_t p2)
 
 p_polyf_t addition_polynome (p_polyf_t p1, p_polyf_t p2)
 {
-  p_polyf_t p3 ;
-  register unsigned int i ;
-
-  p3 = creer_polynome (max (p1->degre, p2->degre));
-
-  for (i = 0 ; i <= min (p1->degre, p2->degre); ++i)
-  {
-    p3->coeff [i] = p1->coeff [i] + p2->coeff [i] ;
+  
+  for(int i=0;i<p2->nbCoeffs;i++){
+    
   }
+  p_polyf_t p3 =creer_polynome(nbCoeffp3);
 
-  if (p1->degre > p2->degre)
-  {
-    for (i = (p2->degre + 1) ; i <= p1->degre; ++i)
-      p3->coeff [i] = p1->coeff [i] ;
-  }
-  else if (p2->degre > p1->degre)
-  {
-    for (i = (p1->degre + 1) ; i <= p2->degre; ++i)
-      p3->coeff [i] = p2->coeff [i] ;
-  }
-
-  return p3 ;
 }
 
 p_polyf_t multiplication_polynome_scalaire (p_polyf_t p, float alpha)
