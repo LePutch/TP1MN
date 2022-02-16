@@ -33,34 +33,52 @@ Après un calcul théorique, nous allons tester ces valeurs en lançant un même
 
 ### Python
 
-|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) | Puissance (GLFOPS/s) |
-|--------|-----------|------------------|-----------------|---------------------|----------------------|
-| Lucas  | 2288      | 49               | 9778            | 1001                |                      |
-| Jérémy | 2714      | 44               | 16672           |                     |                      |
-| Eloi   | 2971      | 58               | 6842            |                     |                      |
+|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) |
+|--------|-----------|------------------|-----------------|---------------------|
+| Lucas  | 2288      | 49               | 9778            | 1001                |
+| Jérémy | 2714      | 44               | 16672           |                     |
+| Eloi   | 2971      | 58               | 6842            |                     |
+
+- $PEloi = 2^{34} / 2971 = 0.0058 GFLOP/S$ Soit `0,006%` de la capacité du processeur
+- $PJérémy = 2^{34} / 2714 = 0.0063 GFLOP/S$ Soit `0,006%` de la capacité du processeur
+- $PLucas = 2^{34} / 2288 = 0.0075 GFLOP/S$ Soit `0,009%` de la capacité du processeur
 
 ### Java
 
-|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) | Puissance (GLFOPS/s) |
-|--------|-----------|------------------|-----------------|---------------------|----------------------|
-| Lucas  | 121       | 45               | 464             | 65                  |                      |
-| Jérémy | 153       | 57               | 470             |                     |                      |
-| Eloi   | 85        | 51               | 225             |                     |                      |
+|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) |
+|--------|-----------|------------------|-----------------|---------------------|
+| Lucas  | 121       | 45               | 464             | 65                  |
+| Jérémy | 153       | 57               | 470             |                     |
+| Eloi   | 85        | 51               | 225             |                     |
+
+
+- $PEloi = 2^{34} / 85 = 0.03 GFLOP/S$ Soit `0,2%` de la capacité du processeur
+- $PJérémy = 2^{34} / 153 = 0.11 GFLOP/S$ Soit `0,11%` de la capacité du processeur
+- $PLucas = 2^{34} / 121 = 0.14 GFLOP/S$ Soit `0,17%` de la capacité du processeur
 
 ### C
 
-|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) | Puissance (GLFOPS/s) |
-|--------|-----------|------------------|-----------------|---------------------|----------------------|
-| Lucas  | 284       | 49               | 733             | 341                 |                      |
-| Jérémy | 262       | 56               | 700             |                     |                      |
-| Eloi   | 485       | 44               | 645             |                     |                      |
+|        | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) |
+|--------|-----------|------------------|-----------------|---------------------|
+| Lucas  | 284       | 49               | 733             | 341                 |
+| Jérémy | 262       | 56               | 700             |                     |
+| Eloi   | 485       | 44               | 645             |                     |
+
+- $PEloi = 2^{34} / 485 = 0.2 GFLOP/S$ Soit `0,02%` de la capacité du processeur
+- $PJérémy = 2^{34} / 262 = 0.06 GFLOP/S$ Soit `0,06%` de la capacité du processeur
+- $PLucas = 2^{34} / 284 = 0.06 GFLOP/S$ Soit `0,07%` de la capacité du processeur
 
 Avec -O3 :
 
-|      | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) | Puissance (GLFOPS/s) |
-|------|-----------|------------------|-----------------|---------------------|----------------------|
-| Eloi | 54        | 43               | 94              |                     |                      |
+|      | Temps (s) | Température (°C) | Energie CPU (J) | Energie Mémoire (J) |
+|------|-----------|------------------|-----------------|---------------------|
+| Eloi | 54        | 43               | 94              |                     |
+
+- $PEloi = 2^{34} / 54 = 0.32 GFLOP/S$ Soit `0,24%` de la capacité du processeur
 
 ## Conclusion
 
-...
+???
+
+# TP1 Polynômes
+
