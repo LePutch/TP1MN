@@ -80,5 +80,55 @@ Avec -O3 :
 
 ???
 
-# TP1 Polynômes
+# TP Polynômes
 
+Lors de ce TP, nous avons du écrire plusieurs fonctions permettants de manipuler des polynômes pleins dans un premier temps et creux par la suite.
+
+## Polynômes pleins
+
+
+### Egalité polynome
+
+La première fonction que nous avons réalisée a été `egalite_polynome`. Pour vérifier si deux polynômes sont égaux, il faut s'assurer que tous leurs coefficients sont égaux.
+Nous regardons premièrement si leurs degrés sont différents, si c'est le cas, ils sont forcément non égaux.
+Ensuite une simple boucle `for` nous permet de parcourir tous les coefficients des deux polynômes et regarder s'ils sont égaux.
+
+### Addition polynôme
+
+?
+
+### Multiplication polynôme scalaire
+
+Pour multiplier un polynôme par un scalaire nous parcourons simplement tous ses coefficients que nous multiplions par le scalaire donné.
+
+### Eval polynôme
+
+Pour calculer la valeur d'un polynôme avec une valeur `x` fournie, nous parcourons tous les coefficients et nous réalisons le calcul suivant pour tous ces coefficients : $val = coeff * x^i$. `i` étant le degré du coefficient (variable de la boucle `for`). Il suffit enfin d'additionner tous ces résultats pour avoir la valeur finale.
+
+### Multiplication polynômes
+
+La multiplication est une double distribution. Nous imbriquons donc deux boucles `for` qui parcourent respectivement les coefficients des deux polynômes et les multiplient entre eux.
+
+
+### Puissance polynome
+
+Pour réaliser une puissance de polynômes nous utilisons la fonction précédente `multiplication_polynomes` que nous itérons `n` fois sur elle-même.
+
+## Composition polynôme
+
+?
+
+
+## Polunômes creux
+
+
+Pour réaliser un polynôme creux nous avons choisi d'ajouter un deuxième tableau dans la structure. Ce nouveau tableau permet de stocker la valeur des degrés respectif aux coefficients dans le premier tableau.
+
+| Tableau des coefficients | 3   | 14 | 1 |
+|--------------------------|-----|----|---|
+| Tableau des degrés       | 256 | 32 | 2 |
+
+- Nous avons un tableau de floats pour les coefficients : `[3.0,14.0,1.0]`
+- Et un tableau d'entier pour les degrés : `[256, 32, 2]`
+
+Ces tableaux représentent le polynôme $3x^{256} + 14x^{32} + x^2$
